@@ -5,13 +5,13 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent; // Reference to the TextMeshProUGUI component
-    public GameObject dialogueUI;          // Reference to the GameObject that contains the text UI
-    public GameObject interactPrompt;      // Reference to the GameObject that displays the interact prompt
-    public GameObject interactCircle;      // Reference to the GameObject that shows the interaction circle
-    public string[] lines;                 // Lines of dialogue
-    public float textSpeed = 0.05f;        // Speed of text typing
+    public GameObject dialogueUI;         // Reference to the GameObject that contains the text UI
+    public GameObject interactPrompt;     // Reference to the GameObject that displays the interact prompt
+    public GameObject interactCircle;     // Reference to the GameObject that shows the interaction circle
+    public string[] lines;                // Lines of dialogue
+    public float textSpeed = 0.05f;       // Speed of text typing
 
-    private int index;                     // Current index of the dialogue line
+    private int index;                    // Current index of the dialogue line
     private bool isPlayerInRange = false; // To check if player is in range
     private bool isDialogueActive = false; // To check if dialogue is currently active
 
@@ -41,11 +41,11 @@ public class Dialogue : MonoBehaviour
                 Debug.Log("E key pressed while in range.");
                 if (!isDialogueActive)
                 {
-                    StartDialogue();
+                    StartDialogue(); // Start the dialogue if it's not active
                 }
                 else
                 {
-                    NextLine(); // Advance to the next line on pressing 'E'
+                    NextLine(); // Advance to the next line if dialogue is active
                 }
             }
         }

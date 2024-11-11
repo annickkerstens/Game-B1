@@ -10,6 +10,9 @@ public class PickupItem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pickupPrompt;  // Use TextMeshProUGUI here
     private Transform player;  // To track the player's position
 
+    // Reference to the interaction circle
+    public InteractionCircle interactionCircle;
+
     private void Start()
     {
         // Find the player in the scene
@@ -68,6 +71,13 @@ public class PickupItem : MonoBehaviour
     {
         Debug.Log("Picked up " + itemName);
         HidePickupPrompt();  // Hide the prompt immediately after the item is picked up
+        
+        // Notify the interaction circle to disappear
+        if (interactionCircle != null)
+        {
+            interactionCircle.HideInteractionCircle();
+        }
+        
         Destroy(gameObject);  // Destroy the item after picking up
     }
 }

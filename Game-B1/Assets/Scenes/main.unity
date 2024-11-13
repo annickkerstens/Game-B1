@@ -15815,10 +15815,8 @@ MonoBehaviour:
   dialogueUI: {fileID: 1053583323}
   interactPrompt: {fileID: 313973053}
   interactCircle: {fileID: 1133852218}
-  initialLines: []
-  postInteractionLines: []
-  initialAudioClips: []
-  postInteractionAudioClips: []
+  lines: []
+  audioClips: []
   textSpeed: 0.05
 --- !u!4 &883986682
 Transform:
@@ -22947,7 +22945,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -22969,11 +22967,12 @@ MonoBehaviour:
   dialogueUI: {fileID: 1053583323}
   interactPrompt: {fileID: 471436093}
   interactCircle: {fileID: 1554733119}
-  initialLines: []
-  postInteractionLines: []
-  initialAudioClips: []
-  postInteractionAudioClips: []
-  textSpeed: 0.05
+  lines:
+  - " \"The next task will take place at the community center. Simply follow the
+    directions, and you\u2019ll arrive at the right location. "
+  audioClips:
+  - {fileID: 8300000, guid: 0e44b5429f7c5e142a7ba2dafef5b07c, type: 3}
+  textSpeed: 0.01
 --- !u!1 &1266700439
 GameObject:
   m_ObjectHideFlags: 0
@@ -23346,7 +23345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 26.84466
+      value: 31.547844
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalScale.y
@@ -23358,7 +23357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.1
+      value: 19.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23366,7 +23365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.33
+      value: 25.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ab0fe8500b234e542b82e22771bbb4a8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35670,8 +35669,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3321819, y: 1, z: 1.2948551}
-  m_Center: {x: -0.0054159164, y: 0, z: -0.017680168}
+  m_Size: {x: 4.872792, y: 7.663403, z: 12.981002}
+  m_Center: {x: 1.7648883, y: -0.053250547, z: -0.30996808}
 --- !u!114 &1812110498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35688,14 +35687,11 @@ MonoBehaviour:
   dialogueUI: {fileID: 1053583323}
   interactPrompt: {fileID: 471436093}
   interactCircle: {fileID: 1554733119}
-  initialLines:
-  - '"It''s okay Tim, don''t worry, you got this!'''''
-  postInteractionLines:
-  - " \"The next task will take place at the community\_center.\_Simply follow the
-    directions, and you\u2019ll arrive at the right location. ''"
-  initialAudioClips:
-  - {fileID: 8300000, guid: a613f667f10bd9a41ba8fd3e42c43fbd, type: 3}
-  postInteractionAudioClips:
+  lines:
+  - '"The next task will take place at the community center."'
+  - "\"Simply follow the directions, and you\u2019ll arrive at the right location.
+    \""
+  audioClips:
   - {fileID: 8300000, guid: 0e44b5429f7c5e142a7ba2dafef5b07c, type: 3}
   textSpeed: 0.01
 --- !u!23 &1812110499
@@ -35756,13 +35752,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812110496}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.75, y: 0.57, z: 25.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.34763083, z: -0, w: 0.9376315}
+  m_LocalPosition: {x: 18.927, y: 1.002, z: 25.234217}
+  m_LocalScale: {x: 0.41917, y: 0.3089, z: 0.13019095}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 40.685, z: 0}
 --- !u!1 &1813419998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1516633220356334574, guid: e23dd9ea7391ff44ebaaabddb556188c, type: 3}
@@ -35807,17 +35803,11 @@ MonoBehaviour:
   dialogueUI: {fileID: 1053583323}
   interactPrompt: {fileID: 313973053}
   interactCircle: {fileID: 1133852218}
-  initialLines:
-  - "\u201CGoodmorning Tim, time to get to work!''"
-  - "\u201CTake this shovel and pull the carrot''"
-  postInteractionLines:
-  - "\u201COh no Tim, what have you done?''"
-  - "\u201CYou\u2019re clearly not in the right mindset today so just move on to
-    your next task\u201D "
-  initialAudioClips:
+  lines:
+  - "\u201CGoodmorning Tim, time to get to work! ''"
+  - "''Take this shovel and pull the carrot\u201D   "
+  audioClips:
   - {fileID: 8300000, guid: 6db009a1357cfa246ba8c38041fd366d, type: 3}
-  postInteractionAudioClips:
-  - {fileID: 8300000, guid: 3df43974ad036974b89500704924ac08, type: 3}
   textSpeed: 0.01
 --- !u!65 &1813420003
 BoxCollider:
@@ -35834,7 +35824,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -40923,7 +40913,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

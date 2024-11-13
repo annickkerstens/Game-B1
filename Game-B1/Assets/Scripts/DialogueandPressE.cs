@@ -4,23 +4,27 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent; // Reference to the TextMeshProUGUI component
-    public GameObject dialogueUI; // Reference to the GameObject that contains the text UI
-    public GameObject interactPrompt; // Reference to the GameObject that displays the interact prompt
-    public GameObject interactCircle; // Reference to the GameObject that shows the interaction circle
-    public string[] lines;  // Lines of dialogue
-    public AudioClip[] audioClips; // Audio clips for each line of dialogue
-    public float textSpeed = 0.05f; // Speed of text typing
+    public TextMeshProUGUI textComponent;         // Reference to the TextMeshProUGUI component
+    public GameObject dialogueUI;                 // Reference to the GameObject that contains the text UI
+    public GameObject interactPrompt;             // Reference to the GameObject that displays the interact prompt
+    public GameObject interactCircle;             // Reference to the GameObject that shows the interaction circle
+    public string[] initialLines;                 // Initial lines of dialogue
+    public string[] postInteractionLines;         // Lines of dialogue after object interaction
+    public AudioClip[] initialAudioClips;         // Audio clips for initial lines
+    public AudioClip[] postInteractionAudioClips; // Audio clips for post-interaction lines
+    public float textSpeed = 0.05f;               // Speed of text typing
 
-    private AudioSource audioSource; // AudioSource to play audio
-    private int index; // Current index of the dialogue line
-    private bool isPlayerInRange = false; // To check if player is in range
-    private bool isDialogueActive = false; // To check if dialogue is currently active
+    private int index;                            // Current index of the dialogue line
+    private bool isPlayerInRange = false;         // To check if player is in range
+    private bool isDialogueActive = false;        // To check if dialogue is currently active
+    private string[] currentLines;                // Holds the current dialogue lines based on interaction state
+    private AudioClip[] currentAudioClips;        // Holds the current audio clips based on interaction state
+    private AudioSource audioSource;              // AudioSource component for playing audio
 
     void Start()
     {
-        // Initialize audio source
-        audioSource = gameObject.AddComponent<AudioSource>();
+        // Initialize the AudioSource
+        audioSource = GetComponent<AudioSource>();
 
         // Ensure the dialogue UI, text component, interact prompt, and interact circle are assigned
         if (dialogueUI == null) { Debug.LogError("Dialogue UI is not assigned in the Inspector!"); }
@@ -28,20 +32,18 @@ public class Dialogue : MonoBehaviour
         if (interactPrompt == null) { Debug.LogError("Interact Prompt is not assigned in the Inspector!"); }
         if (interactCircle == null) { Debug.LogError("Interact Circle is not assigned in the Inspector!"); }
 
-        textComponent.text = string.Empty; // Clear text at the start
-        dialogueUI.SetActive(false); // Initially hide the dialogue UI
-        interactPrompt.SetActive(false); // Initially hide the interact prompt
-        interactCircle.SetActive(false); // Initially hide the interact circle
+        textComponent.text = string.Empty;        // Clear text at the start
+        dialogueUI.SetActive(false);              // Initially hide the dialogue UI
+        interactPrompt.SetActive(false);          // Initially hide the interact prompt
+        interactCircle.SetActive(false);          // Initially hide the interact circle
     }
 
     void Update()
     {
-        // Check if the player is in range and presses the 'E' key
         if (isPlayerInRange)
         {
-            interactPrompt.SetActive(true); // Show interact prompt
-            interactCircle.SetActive(true); // Show the interaction circle
-
+            interactPrompt.SetActive(true);
+            interactCircle.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (!isDialogueActive)
@@ -50,88 +52,94 @@ public class Dialogue : MonoBehaviour
                 }
                 else
                 {
-                    NextLine(); // Advance to the next line on pressing 'E'
+                    NextLine();
                 }
             }
         }
         else
         {
-            interactPrompt.SetActive(false); // Hide interact prompt when out of range
-            interactCircle.SetActive(false); // Hide the interaction circle when out of range
+            interactPrompt.SetActive(false);
+            interactCircle.SetActive(false);
         }
     }
 
     public void StartDialogue()
     {
-        dialogueUI.SetActive(true); // Show the dialogue UI
-        interactPrompt.SetActive(false); // Hide the interact prompt when dialogue starts
-        interactCircle.SetActive(false); // Hide the interaction circle when dialogue starts
-        index = 0; // Reset index to the first line
-        isDialogueActive = true; // Set dialogue state to active
-        PlayAudioClip(); // Play the first audio clip
-        StartCoroutine(TypeLine()); // Start typing the first line
+        if (GameStateController.instance.objectInteracted)
+        {
+            currentLines = postInteractionLines;
+            currentAudioClips = postInteractionAudioClips; // Use post-interaction audio
+        }
+        else
+        {
+            currentLines = initialLines;
+            currentAudioClips = initialAudioClips;         // Use initial audio
+        }
+
+        dialogueUI.SetActive(true);
+        interactPrompt.SetActive(false);
+        interactCircle.SetActive(false);
+        index = 0;
+        isDialogueActive = true;
+        StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
-        textComponent.text = string.Empty; // Clear text before typing
-        foreach (char c in lines[index].ToCharArray())
+        textComponent.text = string.Empty;
+
+        // Play the audio clip for the current line
+        if (currentAudioClips != null && index < currentAudioClips.Length && currentAudioClips[index] != null)
         {
-            textComponent.text += c; // Append characters one by one
-            yield return new WaitForSeconds(textSpeed); // Wait for the specified time
+            audioSource.clip = currentAudioClips[index];
+            audioSource.Play();
+        }
+
+        foreach (char c in currentLines[index].ToCharArray())
+        {
+            textComponent.text += c;
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index < lines.Length - 1) // Check if there are more lines
+        if (index < currentLines.Length - 1)
         {
-            index++; // Move to the next line
-            PlayAudioClip(); // Play the corresponding audio clip
-            StopAllCoroutines(); // Stop the typing coroutine if it's running
-            StartCoroutine(TypeLine());  // Start typing the next line
+            index++;
+            StopAllCoroutines();
+            StartCoroutine(TypeLine());
         }
         else
         {
-            EndDialogue(); // End dialogue if no more lines
-        }
-    }
-
-    void PlayAudioClip()
-    {
-        if (audioClips.Length > index && audioClips[index] != null)
-        {
-            audioSource.clip = audioClips[index];
-            audioSource.Play();
+            EndDialogue();
         }
     }
 
     void EndDialogue()
     {
-        // Ensure any running coroutines are stopped
         StopAllCoroutines();
-        // Clear the text to ensure it disappears
-        textComponent.text = string.Empty; 
-        dialogueUI.SetActive(false); // Hide the dialogue UI
-        isDialogueActive = false; // Set dialogue state to inactive
+        textComponent.text = string.Empty;
+        dialogueUI.SetActive(false);
+        isDialogueActive = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the player enters the trigger
+        if (other.CompareTag("Player"))
         {
-            isPlayerInRange = true; // Set player in range to true
+            isPlayerInRange = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the player exits the trigger
+        if (other.CompareTag("Player"))
         {
-            isPlayerInRange = false; // Set player in range to false
+            isPlayerInRange = false;
             if (isDialogueActive)
             {
-                EndDialogue(); // End dialogue if the player exits while it's active
+                EndDialogue();
             }
         }
     }

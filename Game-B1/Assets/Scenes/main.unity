@@ -36189,7 +36189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8baf64cdabe6e74bb8a2218d855c4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 4
+  walkingSpeed: 6
   jumpEnabled: 0
   jumpSpeed: 1
   crouchEnabled: 0

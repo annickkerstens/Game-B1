@@ -675,7 +675,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 44157834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9237868aa0201f418672e47276ce9f8, type: 3}
+  m_Script: {fileID: 11500000, guid: d6b31d1ea73d90c49b392fc2e3a049ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &48048844 stripped
@@ -3145,7 +3145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &197900250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5072,8 +5072,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5606,7 +5606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -206, y: -29}
+  m_AnchoredPosition: {x: -206, y: -6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &304099482
@@ -5658,8 +5658,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5774,8 +5774,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294901503
+  m_fontColor: {r: 1, g: 0.99433964, b: 0.99433964, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5792,8 +5792,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8794,7 +8794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471436094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8861,8 +8861,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12051,7 +12051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &653306585
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15443,6 +15443,7 @@ MonoBehaviour:
   lines:
   - haaaaiiiii
   - wohohohohhhh
+  audioClips: []
   textSpeed: 0.05
 --- !u!4 &883986682
 Transform:
@@ -19518,7 +19519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1097181693
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19599,7 +19600,7 @@ Transform:
   m_GameObject: {fileID: 1097181692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.624, y: 1.829, z: 25.6}
+  m_LocalPosition: {x: 21.814, y: 1.829, z: 19.952}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29114,7 +29115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1554733120
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -33254,15 +33255,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1746438338292724443, guid: b5acd94242340e64594956afa5d79ec8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.33
+      value: 10.68
       objectReference: {fileID: 0}
     - target: {fileID: 1746438338292724443, guid: b5acd94242340e64594956afa5d79ec8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 1746438338292724443, guid: b5acd94242340e64594956afa5d79ec8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.52
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 1746438338292724443, guid: b5acd94242340e64594956afa5d79ec8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -34428,7 +34429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1812110497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34469,6 +34470,7 @@ MonoBehaviour:
   lines:
   - Your next task is in the townhouse.
   - Follow the directions on the street to get there.
+  audioClips: []
   textSpeed: 0.05
 --- !u!23 &1812110499
 MeshRenderer:
@@ -34582,6 +34584,7 @@ MonoBehaviour:
   lines:
   - Goodmorning Tim, time to get to work!
   - Take this shovel and pull a carrot out of the ground.
+  audioClips: []
   textSpeed: 0.01
 --- !u!65 &1813420003
 BoxCollider:
@@ -35079,7 +35082,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.04150939, g: 0.040334597, b: 0.040334597, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

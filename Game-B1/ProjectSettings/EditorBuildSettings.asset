@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Buurthuis.unity
-    guid: 2a4f564691442f54d9f992110f7812d6
-  - enabled: 1
     path: Assets/Scenes/main.unity
     guid: f8d25758869ea1c41ad68903ffbc3213
+  - enabled: 1
+    path: Assets/Scenes/backup2.unity
+    guid: 9d0bdf8e288ea48909b69d1bb6775171
   m_configObjects: {}

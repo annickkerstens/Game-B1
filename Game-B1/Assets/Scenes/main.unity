@@ -35688,11 +35688,16 @@ MonoBehaviour:
   dialogueUI: {fileID: 1053583323}
   interactPrompt: {fileID: 471436093}
   interactCircle: {fileID: 1554733119}
-  initialLines: []
-  postInteractionLines: []
-  initialAudioClips: []
-  postInteractionAudioClips: []
-  textSpeed: 0.05
+  initialLines:
+  - '"It''s okay Tim, don''t worry, you got this!'''''
+  postInteractionLines:
+  - " \"The next task will take place at the community\_center.\_Simply follow the
+    directions, and you\u2019ll arrive at the right location. ''"
+  initialAudioClips:
+  - {fileID: 8300000, guid: a613f667f10bd9a41ba8fd3e42c43fbd, type: 3}
+  postInteractionAudioClips:
+  - {fileID: 8300000, guid: 0e44b5429f7c5e142a7ba2dafef5b07c, type: 3}
+  textSpeed: 0.01
 --- !u!23 &1812110499
 MeshRenderer:
   m_ObjectHideFlags: 0

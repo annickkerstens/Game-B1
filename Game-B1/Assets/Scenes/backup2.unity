@@ -2376,9 +2376,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dd11f837430438a45ad92a8c910b7305, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.609
+  m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3199,13 +3199,15 @@ MonoBehaviour:
   - No daddy look! this isn't the drink I wanted, I wanted apple juice! What even
     is this?
   - What do you think you're doing giving my little girl alcohol! This isnt what
-    she ordered!
-  - 'Optie F: I''m sorry the drinks must''ve been mixed up, I''ll take the drink
-    back and get a new one. Optie E: Well it isn''t my fault I didn''t make the drinks!'
-  - Well it isn't my fault I didn't make the drinks!
+    she ordered! What do you have to say for yourself?
+  - 'Option F: I''m sorry the drinks must''ve been mixed up, I''ll take the drink
+    back and get a new one. Option E: Well it isn''t my fault I didn''t make the
+    drinks!'
+  - Well it isn't my fault I didn't make the drinks, did I? Now just drink it or
+    not, but I'm not getting you a new one.
   - What did you say to me?!
-  - 'Optie F: Oh I''m sorry, I didn''t mean to say that, I''m just having a bad day.
-    Optie E: You heard me!'
+  - 'Option F: Oh I''m sorry, I didn''t mean to say that, I''m just having a bad
+    day. Option E: You heard me!'
   - You heard me!
   - Security, get him out!
   - It's okay Tim, Tomorrow is a new day! Just keep on trying!
@@ -6320,7 +6322,6 @@ MonoBehaviour:
   interactPrompt: {fileID: 2040961162}
   interactCircle: {fileID: 626904613}
   lines:
-  - Welcome Tim, time to serve some drinks! Go to the bar to get started!
   - Take the tray and bring it to the people in the back.
   audioClips: []
   textSpeed: 0.05
